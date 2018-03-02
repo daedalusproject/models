@@ -1,0 +1,164 @@
+  Daedalus Project - Business Model
+=====================================
+
+Daedalus project aims to be a powerful in interface for managing orchestrated
+applications and server configuration across multiple SaaS providers.
+
+Daedalus offers orchestrated servers as a service.
+
+
+=======================================================================================================================
+
+In our business plan a single server or cluster of servers is called maze.
+
+    .-------------.
+   /             /
+  /    Mazes    /
+ /             /
+'-------------'
+
++-------------------------+
+|   Full Stack Services   |
++-------------------------+
+
+In these services there is only one server, these mazes are isolated from each other.
+
+  .-----------------.    .--------------------------------.
+ /  Isolated Maze  / ->  | Development or phoenix server  |
+'-----------------'      '--------------------------------'
+
+    *-> Single server - full stack.
+    *-> Monitoring service disabled.
+    *-> Backup service disabled.
+    *-> SSH access through public IP or VPN service, if purchased.
+
+  .-----------------.    .--------------------------------.
+ /  Single Maze    / ->  | Low load production servers    |
+'-----------------'      '--------------------------------'
+
+    *-> Single server - Full Stack.
+    *-> Monitoring service.
+    *-> Backup service for databases and files, backups are placed outside the environment.
+    *-> SSH access through public IP or VPN service, if purchased.
+
++-------------------------+
+|   Clustered Services    |
++-------------------------+
+
+Clustered services contain more than one server, these servers provide environment services
+such as caches, load balancers, frontends, database backends, etc.
+
+  .-----------------.    .--------------------------------.
+ /  Complex Maze   /  -> | High load production servers   |
+'-----------------'      '--------------------------------'
+
+    *-> Clustered environment.
+    *-> Monitoring server placed inside environment.
+    *-> Backup service for databases and files, backups are placed inside the environment.
+    *-> HA choicely for critical services such load balancers, database backends, etc.
+    *-> SSH access through VPN service.
+
+    Of course, clients are able to deploy single mazes inside complex ones.
+    These single mazes could be used as staging environment for example.
+
+  .-------------------------.    .--------------------------------.
+ / Isolated Complex Maze   /  -> | Development clustered servers  |
+'-------------------------'      '--------------------------------'
+
+    *-> Clustered environment.
+    *-> Monitoring server placed inside environment choicely.
+    *-> Backup service choicely for databases and files. Backups are placed inside the environment.
+    *-> HA choicely for critical services such load balancers, database backends, etc.
+    *-> SSH access through VPN service.
+
+    Complex Maze size is defined by client based on project requirements.
+
+=======================================================================================================================
+
+    .---------------------.
+   /                     /
+  /    Maze Services    /
+ /                     /
+'---------------------'
+
+Daedalus Project offers the following services for their Maze plans:
+
+    .-------------------------.
+   /  Monitoring Service     /
+  '-------------------------'
+
+  Production Mazes, and isolated complex ones, have their nodes monitored.
+
+  Monitoring service covers the following parameters:
+
+    -> System CPU usage.
+    -> System Memory Usage.
+    -> System Swap usage.
+    -> System Disks usage.
+    -> Database monitoring.
+    -> Cluster database monitoring.
+    -> VPN connections status.
+    -> Traffic status for webservers.
+    -> Load balancing status.
+
+    These are default parameters, client can request new monitoring checks such as application status.
+    All those request must be asked using our Service Desk platform.
+
+    Monitoring includes alerting service too. Checks like disk usage or cluster database will send alerts
+    to our IT department and optionally the alert will be sent to specified client contacts.
+
+    In the first revision of this project clients may receive alerts which will be managed along with
+    IT department. In next versions of Daedalus Project clients will be able to increase disk space
+    through their administration dashboard in non extremely critical alerts.
+
+    .-------------------------.
+   /  Firewall Service       /
+  '-------------------------'
+
+  In single mazes, firewall service can be configured to allow access only to certain ports of the server.
+  It also forbid access to development environments to all IPs instead of client's chosen ones.
+
+  Firewall also blocks any IP performing malicious operations like DDoS attacks, port scanning, etc.
+
+  In case of a DDoS attack the clients will receive notifications about the IPs or IP ranges that have been blocked.
+  Sometimes SEO analysers may be blocked by firewall, in this case clients are able to unblock those IPs.
+  To prevent firewall block IPs committing SEO analyses or load testing clients can configure white lists
+  using the client dashboard.
+
+    .-------------------------.
+   /  VPN Service            /
+  '-------------------------'
+
+  VPN server is included in complex mazes. For security reasons servers inside complex Mazes are reachable only from VPN network.
+
+    .-------------------------.
+   /  Backup Service         /
+  '-------------------------'
+
+  In single and complex mazes there is a backup policy for databases and files for avoiding accidental data loss.
+
+  * Single Mazes -> Backups are placed outside the environment.
+  * Complex Mazes -> Backups are placed in volumes inside the environment.
+
+  Optionally backups can be placed also in AWS S3 volumes or Google Storage volumes.
+
+    .-------------------------.
+   /  Deployment Service     /
+  '-------------------------'
+
+  To do
+
+
+In any type of maze clients billing is based on per hour of usage.
+Disk space
+
+=======================================================================================================================
+
+    .---------------------.
+   /                     /
+  /       Billing       /
+ /                     /
+'---------------------'
+
+.
+
