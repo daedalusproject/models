@@ -1,0 +1,24 @@
+  Daedalus Project - Requeriments
+=====================================
+
+Here is the list of requeriments that Daedalus Project must follow:
+
+    .--------------------.
+   /                    /
+  /    Organizations   /
+ /                    /
+'--------------------'
+
+* -> A potential new user must receive an e-mail to join to Daedalust Project.
+* -> That user must be able to create an organization.
+* -> First created user becomes master user of his/her Organization.
+* -> Once the organizatión has been created, Master User can invite/create new users.
+* -> Master User has to be able to grant access to user from foreign organizations who will be able
+     in hos/her organization according with that user role.
+* -> Daedalus Project allows many organizations. Some organization users must be able to operate 
+     in other organization mazes.
+* -> Organization users may have the following roles:
+   * -> Master Users       -  Organization owner.
+   * -> Maze Designer
+
+* -> Inside the oraganizatión realm, 
