@@ -1,7 +1,22 @@
-  Daedalus Project - Requeriments
+  Daedalus Project - Requirements
 =====================================
 
-Here is the list of requeriments that Daedalus Project must follow:
+    .--------------------.
+   /      Abstract      /
+  '--------------------'
+
+ * -> Daedalus Project manages *Projects*
+    * -> Projects mean applications hosted in Mazes.
+    * -> A Maze is a group of servers.
+    * -> Servers are also hosted at Saas providers.
+    * -> Projects are owned by Organizations.
+    * -> Projects are managed by Organizations.
+
+=====================================
+
+Here is the list of requirements that Daedalus Project must follow:
+
+
 
     .--------------------.
    /                    /
@@ -9,16 +24,68 @@ Here is the list of requeriments that Daedalus Project must follow:
  /                    /
 '--------------------'
 
-* -> A potential new user must receive an e-mail to join to Daedalust Project.
-* -> That user must be able to create an organization.
-* -> First created user becomes master user of his/her Organization.
-* -> Once the organizatión has been created, Master User can invite/create new users.
-* -> Master User has to be able to grant access to user from foreign organizations who will be able
-     in hos/her organization according with that user role.
-* -> Daedalus Project allows many organizations. Some organization users must be able to operate 
-     in other organization mazes.
+ * -> An organization is an official group of people, in our case it should be a company or a single
+      person.
+ * -> A potential new user must receive an e-mail to join to Daedalust Project.
+ * -> That user must be able to create one or more Organizations.
+ * -> Each Organization needs to provide their billing info and sign user contracts before become enabled
+      by Daedalus Project Administrator(s).
+ * -> First created user becomes Master User of his/her Organization.
+ * -> Once the organizatión has been created, Master User can invite/create new users to his/her
+      Organization.
+ * -> Master User may grant access to user from foreign organizations who will be able
+      to operate in his/her organization projects according with their user role.
+
+    .-----------------------------.
+   /                             /
+  /    Projects   &   Mazes     /
+ /                             /
+'-----------------------------'
+
+ * -> Projects are applications hosted in Mazes.
+ * -> A Maze is a set of servers and services.
+ * -> The number of servers and their features depends on Organization requirements.
+ * -> There are two types of mazes:
+      * ->  Single Maze  ->  Low load production servers.
+      * ->  Complex Mazes -> High load production servers.
+ * -> Projects have a name, description and Oracle.
+ * -> Project's Oracle knows project data (domain names, SSL certificates), service data ( Web Server
+      and load balancer configurations, PHP memory limits, etc ), mazes visibility between each other.
+ * -> Organizations are able to create development environments using Project's Orcacle data.
+      For example, development Complex Maze is deployed using and anonymized production database copy.
+ * -> Dadedalus Poject must support many types of projects (Wordpress, Magento 1, Magento 2, Django, Catalyst, etc)
+ * -> Each type of projects may have its own information models so....
+ * -> Daedalus Project implementation MUST allow the addition of new project types, mazes services,
+      servers configurations, server access policy. 
+ * -> Simple and Complex mazes include services (See business model).
+ * -> Extra Services can be hired hired by the Organization.
+
+    .--------------------.
+   /                    /
+  /       Users        /
+ /                    /
+'--------------------'
+
 * -> Organization users may have the following roles:
    * -> Master Users       -  Organization owner.
    * -> Maze Designer
 
 * -> Inside the oraganizatión realm, 
+
+
+
+
+    .--------------------.
+   /                    /
+  /       Users        /
+ /                    /
+'--------------------'
+
+
+                         MANTRAS
+.------------------------------------------------------------.
+|      Evolutionary clean designs adaptable to changs.       |
+,------------------------------------------------------------,
+.------------------------------------------------------------.
+|                  Think twice, code one.                    |
+,------------------------------------------------------------,
