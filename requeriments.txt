@@ -16,8 +16,6 @@
 
 Here is the list of requirements that Daedalus Project must follow:
 
-
-
     .--------------------.
    /                    /
   /    Organizations   /
@@ -58,6 +56,7 @@ Here is the list of requirements that Daedalus Project must follow:
  * -> Daedalus Project implementation MUST allow the addition of new project types, mazes services,
       servers configurations, server access policy. 
  * -> Simple and Complex mazes include services (See business model).
+ * -> Part of those services may be non eligible.
  * -> Extra Services can be hired hired by the Organization.
 
     .--------------------.
@@ -67,19 +66,55 @@ Here is the list of requirements that Daedalus Project must follow:
 '--------------------'
 
 * -> Organization users may have the following roles:
-   * -> Master Users       -  Organization owner.
-   * -> Maze Designer
 
-* -> Inside the oraganizatión realm, 
+  .---------------------------------.
+ /  Organization Master            /
+'---------------------------------'
+
+  * -> Organization Manager
+  * -> It can be more than one Organization Manager.
+  * -> This role is able to create new users insise the organization
+  * ->
+
+  .---------------------------------.
+ /  Maze Architect                 /
+'---------------------------------'
+
+  .---------------------------------.
+ /  Project Caretaker              /
+'---------------------------------'
+
+  .---------------------------------.
+ /  Access Caretaker               /
+'---------------------------------'
+
+  .--------------------------------.
+ /  Health Watcher                /
+'--------------------------------'
+
+  .--------------------------------.
+ /  Expense Watcher               /
+'--------------------------------'
+
+  .--------------------------------.
+ /  Maze Architecth               /
+'--------------------------------'
 
 
+* -> There are also Daedalus operator roles
 
+  .--------------------------------.
+ /  Maze Master                   /
+'--------------------------------'
 
-    .--------------------.
-   /                    /
-  /       Users        /
- /                    /
-'--------------------'
+  .--------------------------------.
+ /  Fireman                       /
+'--------------------------------'
+
+  .--------------------------------.
+ /  Fireman  Commando             /
+'--------------------------------'
+
 
 
                          MANTRAS
