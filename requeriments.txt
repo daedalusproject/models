@@ -49,6 +49,7 @@ Here is the list of requirements that Daedalus Project must follow:
  * -> Projects have a name, description and Oracle.
  * -> Project's Oracle knows project data (domain names, SSL certificates), service data ( Web Server
       and load balancer configurations, PHP memory limits, etc ), mazes visibility between each other.
+ * -> Project's Oracle also knows and mantanins eligible infrastructure pieces (for example, how many forntends is using this Poject).
  * -> Organizations are able to create development environments using Project's Orcacle data.
       For example, development Complex Maze is deployed using and anonymized production database copy.
  * -> Dadedalus Poject must support many types of projects (Wordpress, Magento 1, Magento 2, Django, Catalyst, etc)
@@ -58,6 +59,10 @@ Here is the list of requirements that Daedalus Project must follow:
  * -> Simple and Complex mazes include services (See business model).
  * -> Part of those services may be non eligible.
  * -> Extra Services can be hired hired by the Organization.
+ * -> Projects are owned by Organizations and can be managned by the same organization or by another
+      Organization.
+ * -> Apart of the Organization which owns a Project, only one more Organization can Manage that
+      Project.
 
     .--------------------.
    /                    /
@@ -71,22 +76,24 @@ Here is the list of requirements that Daedalus Project must follow:
  /  Organization Master            /
 '---------------------------------'
 
-  * -> Organization Manager
-  * -> It can be more than one Organization Manager.
-  * -> This role is able to create new users insise the organization
-  * ->
-
-  .---------------------------------.
- /  Maze Architect                 /
-'---------------------------------'
+  * -> Organization Master
+  * -> It can be more than one Organization Master in each Organization.
+  * -> This role is able to create new users inside its Organization.
+  * -> This role is able to assing roles inside its Organization.
+  * -> This role is the only able to create Projects.
+  * -> Organization Master is also who allows other Organizations to manage its projects.
 
   .---------------------------------.
  /  Project Caretaker              /
 '---------------------------------'
 
-  .---------------------------------.
- /  Access Caretaker               /
-'---------------------------------'
+  * -> This role manages (but does not create) projects owned or managed by its Organization.
+  * -> For each project, Project Caretaker supply Project Info to Project's Oracle.
+  * -> Project Caretaker is able to:
+       * -> Resize Project mazes.
+       * -> Manage mazes firewall.
+       * -> Manage mazes developers access.
+       * -> And many more.
 
   .--------------------------------.
  /  Health Watcher                /
