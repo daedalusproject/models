@@ -46,6 +46,7 @@ Here is the list of requirements that Daedalus Project must follow:
  * -> There are two types of mazes:
       * ->  Single Maze  ->  Low load production servers.
       * ->  Complex Mazes -> High load production servers.
+ * -> All mazes come with monitoring service enabled
  * -> Projects have a name, description and Oracle.
  * -> Project's Oracle knows project data (domain names, SSL certificates), service data ( Web Server
       and load balancer configurations, PHP memory limits, etc ), mazes visibility between each other.
@@ -70,6 +71,7 @@ Here is the list of requirements that Daedalus Project must follow:
  /                    /
 '--------------------'
 
+* -> Each user have 0 or more roles.
 * -> Organization users may have the following roles:
 
   .---------------------------------.
@@ -93,15 +95,23 @@ Here is the list of requirements that Daedalus Project must follow:
        * -> Resize Project mazes.
        * -> Manage mazes firewall.
        * -> Manage mazes developers access.
-       * -> And many more.
+       * -> Set Project domains.
+       * -> SSL certificates.
+       * -> FTP jails.
+       * -> Any other required service parameters.
 
   .--------------------------------.
  /  Health Watcher                /
 '--------------------------------'
 
+  * -> This role is able to review maze status using centralized monitoring panel.
+  * -> It is also able to suscribe to monitoring alers.
+
   .--------------------------------.
  /  Expense Watcher               /
 '--------------------------------'
+
+  * -> 
 
   .--------------------------------.
  /  Maze Architecth               /
@@ -121,6 +131,13 @@ Here is the list of requirements that Daedalus Project must follow:
   .--------------------------------.
  /  Fireman  Commando             /
 '--------------------------------'
+
+
+    .-----------------------------------------.
+   /                                         /
+  /     Centralized Monitoring Panel        /
+ /                                         /
+'-----------------------------------------'
 
 
 
