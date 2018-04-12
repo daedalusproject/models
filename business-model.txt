@@ -160,4 +160,4 @@ Disk space
  /                     /
 '---------------------'
 
-Clients pay the same price that SaaS provider offers for the servers or services used by Project services. They also pay for support service, maintenance, extra services usage and Daedalus project fee (
+Clients pay the same price that SaaS provider offers for the servers or services used by Project services. They also pay for support service, maintenance, extra services usage and Daedalus project fee (which has to be defined).
