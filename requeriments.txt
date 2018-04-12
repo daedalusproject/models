@@ -92,6 +92,7 @@ Here is the list of requirements that Daedalus Project must follow:
   * -> This role manages (but does not create) projects owned or managed by its Organization.
   * -> For each project, Project Caretaker supply Project Info to Project's Oracle.
   * -> Project Caretaker is able to:
+       * -> Deploy development environments which will be a copy of (parts of) the original project env.
        * -> Resize Project mazes.
        * -> Manage mazes firewall.
        * -> Manage mazes developers access.
@@ -105,18 +106,14 @@ Here is the list of requirements that Daedalus Project must follow:
 '--------------------------------'
 
   * -> This role is able to review maze status using centralized monitoring panel.
-  * -> It is also able to suscribe to monitoring alers.
+  * -> It is also able to suscribe to monitoring alerts.
 
   .--------------------------------.
  /  Expense Watcher               /
 '--------------------------------'
 
-  * -> 
-
-  .--------------------------------.
- /  Maze Architecth               /
-'--------------------------------'
-
+  * -> This role can review costs of Organization projects.
+  * -> This role can configure billing alerts.
 
 * -> There are also Daedalus operator roles
 
@@ -124,13 +121,25 @@ Here is the list of requirements that Daedalus Project must follow:
  /  Maze Master                   /
 '--------------------------------'
 
+* -> Rules all the mazes
+* -> It is allowed to review, resize and manage any server, service or maze of any project.
+
   .--------------------------------.
  /  Fireman                       /
 '--------------------------------'
 
+* -> Sysadmin on duty
+* -> It is allowed to review health status of any project.
+* -> Projects visible by Fireman are configured by Fireman Commando.
+* -> This user is ale to acces to all servers of Project Mazes and become root.
+
   .--------------------------------.
  /  Fireman  Commando             /
 '--------------------------------'
+
+* -> Has all Fireman properties.
+* -> Decides Fireman visibility and access.
+* -> It's able to acces to any Saas control pannel.
 
 
     .-----------------------------------------.
@@ -138,6 +147,28 @@ Here is the list of requirements that Daedalus Project must follow:
   /     Centralized Monitoring Panel        /
  /                                         /
 '-----------------------------------------'
+
+TO DO
+
+    .-----------------------------------------.
+   /                                         /
+  /     Alerting services                   /
+ /                                         /
+'-----------------------------------------'
+
+    .-----------------------------------------.
+   /                                         /
+  /     Notifications                       /
+ /                                         /
+'-----------------------------------------'
+
+    .-----------------------------------------.
+   /                                         /
+  /     Expense Panel                       /
+ /                                         /
+'-----------------------------------------'
+
+TO DO
 
 
 

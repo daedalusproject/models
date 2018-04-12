@@ -1,7 +1,7 @@
   Daedalus Project - Business Model
 =====================================
 
-Daedalus project aims to be a powerful in interface for managing orchestrated
+Daedalus project aims to be a powerful interface for managing orchestrated
 applications and server configuration across multiple SaaS providers.
 
 Daedalus offers orchestrated servers as a service.
@@ -160,5 +160,4 @@ Disk space
  /                     /
 '---------------------'
 
-.
-
+Clients pay the same price that SaaS provider offers for the servers or services used by Project services. They also pay for support service, maintenance, extra services usage and Daedalus project fee (
