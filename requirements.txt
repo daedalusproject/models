@@ -1,0 +1,181 @@
+  Daedalus Project - Requirements
+=====================================
+
+    .--------------------.
+   /      Abstract      /
+  '--------------------'
+
+ * -> Daedalus Project manages *Projects*
+    * -> Projects mean applications hosted in Mazes.
+    * -> A Maze is a group of servers.
+    * -> Servers are also hosted at Saas providers.
+    * -> Projects are owned by Organizations.
+    * -> Projects are managed by Organizations.
+
+=====================================
+
+Here is the list of requirements that Daedalus Project must follow:
+
+    .--------------------.
+   /                    /
+  /    Organizations   /
+ /                    /
+'--------------------'
+
+ * -> An organization is an official group of people, in our case it should be a company or a single
+      person.
+ * -> A potential new user must receive an e-mail to join to Daedalust Project.
+ * -> That user must be able to create one or more Organizations.
+ * -> Each Organization needs to provide their billing info and sign user contracts before become enabled
+      by Daedalus Project Administrator(s).
+ * -> First created user becomes Master User of his/her Organization.
+ * -> Once the organization has been created, Master User can invite/create new users to his/her
+      Organization.
+ * -> Master User may grant access to user from foreign organizations who will be able
+      to operate in his/her organization projects according with their user role.
+
+    .-----------------------------.
+   /                             /
+  /    Projects   &   Mazes     /
+ /                             /
+'-----------------------------'
+
+ * -> Projects are applications hosted in Mazes.
+ * -> A Maze is a set of servers and services.
+ * -> The number of servers and their features depends on Organization requirements.
+ * -> There are two types of mazes:
+      * ->  Single Maze  ->  Low load production servers.
+      * ->  Complex Mazes -> High load production servers.
+ * -> All mazes come with monitoring service enabled
+ * -> Projects have a name, description and Oracle.
+ * -> Project's Oracle knows project data (domain names, SSL certificates), service data ( Web Server
+      and load balancer configurations, PHP memory limits, etc ), mazes visibility between each other.
+ * -> Project's Oracle also knows and mantanins eligible infrastructure pieces (for example, how many frontends is using this Project).
+ * -> Organizations are able to create development environments using Project's Oracle data.
+      For example, development Complex Maze is deployed using and anonymized production database copy.
+ * -> Dadedalus Project must support many types of projects (Wordpress, Magento 1, Magento 2, Django, Catalyst, etc)
+ * -> Each type of projects may have its own information models so....
+ * -> Daedalus Project implementation MUST allow the addition of new project types, mazes services,
+      servers configurations, server access policy. 
+ * -> Simple and Complex mazes include services (See business model).
+ * -> Part of those services may be non eligible.
+ * -> Extra Services can be hired hired by the Organization.
+ * -> Projects are owned by Organizations and can be managed by the same organization or by another
+      Organization.
+ * -> Apart of the Organization which owns a Project, only one more Organization can Manage that
+      Project.
+
+    .--------------------.
+   /                    /
+  /       Users        /
+ /                    /
+'--------------------'
+
+* -> Each user have 0 or more roles.
+* -> Organization users may have the following roles:
+
+  .---------------------------------.
+ /  Organization Master            /
+'---------------------------------'
+
+  * -> Organization Master
+  * -> It can be more than one Organization Master in each Organization.
+  * -> This role is able to create new users inside its Organization.
+  * -> This role is able to assign roles inside its Organization.
+  * -> This role is the only able to create Projects.
+  * -> Organization Master is also who allows other Organizations to manage its projects.
+
+  .---------------------------------.
+ /  Project Caretaker              /
+'---------------------------------'
+
+  * -> This role manages (but does not create) projects owned or managed by its Organization.
+  * -> For each project, Project Caretaker supply Project Info to Project's Oracle.
+  * -> Project Caretaker is able to:
+       * -> Deploy development environments which will be a copy of (parts of) the original project env.
+       * -> Resize Project mazes.
+       * -> Manage mazes firewall.
+       * -> Manage mazes developers access.
+       * -> Set Project domains.
+       * -> SSL certificates.
+       * -> FTP jails.
+       * -> Any other required service parameters.
+
+  .--------------------------------.
+ /  Health Watcher                /
+'--------------------------------'
+
+  * -> This role is able to review maze status using centralized monitoring panel.
+  * -> It is also able to subscribe to monitoring alerts.
+
+  .--------------------------------.
+ /  Expense Watcher               /
+'--------------------------------'
+
+  * -> This role can review costs of Organization projects.
+  * -> This role can configure billing alerts.
+
+* -> There are also Daedalus operator roles
+
+  .--------------------------------.
+ /  Maze Master                   /
+'--------------------------------'
+
+* -> Rules all the mazes
+* -> It is allowed to review, resize and manage any server, service or maze of any project.
+
+  .--------------------------------.
+ /  Fireman                       /
+'--------------------------------'
+
+* -> Sysadmin on duty
+* -> It is allowed to review health status of any project.
+* -> Projects visible by Fireman are configured by Fireman Commando.
+* -> This user is ale to access to all servers of Project Mazes and become root.
+
+  .--------------------------------.
+ /  Fireman  Commando             /
+'--------------------------------'
+
+* -> Has all Fireman properties.
+* -> Decides Fireman visibility and access.
+* -> It's able to access to any Saas control panel.
+
+
+    .-----------------------------------------.
+   /                                         /
+  /     Centralized Monitoring Panel        /
+ /                                         /
+'-----------------------------------------'
+
+TO DO
+
+    .-----------------------------------------.
+   /                                         /
+  /     Alerting services                   /
+ /                                         /
+'-----------------------------------------'
+
+    .-----------------------------------------.
+   /                                         /
+  /     Notifications                       /
+ /                                         /
+'-----------------------------------------'
+
+    .-----------------------------------------.
+   /                                         /
+  /     Expense Panel                       /
+ /                                         /
+'-----------------------------------------'
+
+TO DO
+
+
+
+                         MANTRAS
+.------------------------------------------------------------.
+|      Evolutionary clean designs adaptable to changes.      |
+,------------------------------------------------------------,
+.------------------------------------------------------------.
+|                  Think twice, code one.                    |
+,------------------------------------------------------------,
