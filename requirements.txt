@@ -31,8 +31,8 @@ Here is the list of requirements that Daedalus Project must follow:
  * -> First created user becomes Master User of his/her Organization.
  * -> Once the organization has been created, Master User can invite/create new users to his/her
       Organization.
- * -> Master User may grant access to user from foreign organizations who will be able
-      to operate in his/her organization projects according with their user role.
+ * -> Master User may grant access to foreign organizations that will be able
+      to operate in his/her organization projects.
 
     .-----------------------------.
    /                             /
@@ -70,7 +70,7 @@ Here is the list of requirements that Daedalus Project must follow:
   /       Users        /
  /                    /
 '--------------------'
-
+* -> User belongs to one or more organizations.
 * -> Each user have 0 or more roles.
 * -> Organization users may have the following roles:
 
@@ -141,6 +141,13 @@ Here is the list of requirements that Daedalus Project must follow:
 * -> Decides Fireman visibility and access.
 * -> It's able to access to any Saas control panel.
 
+    .-----------------------------------------.
+   /                                         /
+  /     Projects Oracle         /
+ /                                         /
+'-----------------------------------------'
+
+TO DO
 
     .-----------------------------------------.
    /                                         /

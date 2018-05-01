@@ -1,0 +1,96 @@
+  Daedalus Project - Services
+=====================================
+
+Daedalus Project is not a giant monolitic app, it splits into many services.
+
+    .----------------------.
+   /     Daedalus (Core)  /
+  '----------------------'
+   
+  Information system wich also manages al other services, clients, organization and projects.
+
+  Technology: Perl Catalyst (so far).
+
+    .----------------------.
+   /     Gorgon           /
+  '----------------------'
+
+  Web frontend which allows users interact with Daedalus.
+  Technology: ¿?
+
+    .----------------------.
+   /     Hermes           /
+  '----------------------'
+  
+   This service provides comunication between services.
+   It is essencialy a distributed message broker.
+   Technology: ¿? (ømq, RabbitMq, Celery, Kafka, Apache ActiveMQ, AWS SQS, Gcloud Pub/Sub)
+
+    .----------------------.
+   /     Icarus           /
+  '----------------------'
+  
+   This service provides Saas management across all suported providers
+   (machine creation, Saas service management, etc)
+   This service for example manages VPC firewall rules acording with Demeter provided Info.
+   Technology: ¿? (Probably it will be written in GO)
+
+    .----------------------.
+   /     Aion             /
+  '----------------------'
+
+   (The "time" represented by Aion is unbounded, in contrast to Chronos as empirical time
+   divided into past, present, and future.)
+   The timekeeper, this service manages backups from projects (machines and Daedalus 
+   data itself). There is one Aion present for each maze.
+   Technology: ¿?
+
+    .----------------------.
+   /     Demeter          /
+  '----------------------'
+
+   This service manages Project's info (maze configuration, Project's machines, 
+   backups policy, monitoring preferences, alert policy).
+   Technology: ¿? (Non relatioal database because each Saas has its own config)
+
+    .----------------------.
+   /     Nereus           /
+  '----------------------'
+
+   Acording with Demeter info it will render machines or service info which will 
+   be used by its Nereid.
+   Technology: ¿? (Probably it will be written in Perl)
+
+    .----------------------.
+   /     Nerites           /
+  '----------------------'
+
+   Service config deployer (uses Nereus info), manages configuration for the following Maze services:
+     - Iris
+     - Nereid
+     - Kairos
+     - Aion
+   Technology: Saltstack so far.
+
+    .----------------------.
+   /     Nereid           /
+  '----------------------'
+
+   Machine config deployer (uses Nereus info)
+   Technology: Saltstack so far.
+
+    .----------------------.
+   /     Kairos           /
+  '----------------------'
+
+   Realtime Monitoring Maze service.
+   Technology: Prometheus so far.
+
+    .----------------------.
+   /     Agathodaemon     /
+  '----------------------'
+
+   (Ensures good luck, health, and wisdom.)
+   Project's monitoring services, provides monitorign info provides by Mazes Kairos service.
+
+   Technology: Prometheus + Grafana so far.
