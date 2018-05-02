@@ -7,8 +7,7 @@ Daedalus Project is not a giant monolitic app, it splits into many services.
    /     Daedalus (Core)  /
   '----------------------'
    
-  Information system wich also manages all other services, clients, organization and projects.
-
+  Information system which also manages all other services, clients, organization and projects.
   Technology: Perl Catalyst (so far).
 
     .----------------------.
