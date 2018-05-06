@@ -64,6 +64,9 @@ Here is the list of requirements that Daedalus Project must follow:
       Organization.
  * -> Apart of the Organization which owns a Project, only one more Organization can Manage that
       Project.
+ * -> If organizaction A wants Organization B to manage its project, A is able to choose the roles 
+      able to manage its project. For example A manages an e-commerce site and needs developers from organization B.
+      So A is able to shate its project with B only for Project Caretaker role.
 
     .--------------------.
    /                    /
@@ -72,6 +75,10 @@ Here is the list of requirements that Daedalus Project must follow:
 '--------------------'
 * -> User belongs to one or more organizations.
 * -> Each user have 0 or more roles.
+* -> Organzations are able to manage groups of uers with the same role. For example, an intern roles.
+* -> An organizacion is able to manage groups of roles, for example groups of project's caratakers. 
+     When organization A wants Organization B to manage its project, organization B is able to choose
+     which users with that role are able to manage Orgranization A project.
 * -> Organization users may have the following roles:
 
   .---------------------------------.
@@ -184,5 +191,5 @@ TO DO
 |      Evolutionary clean designs adaptable to changes.      |
 ,------------------------------------------------------------,
 .------------------------------------------------------------.
-|                  Think twice, code one.                    |
+|                  Think twice, code once.                    |
 ,------------------------------------------------------------,
