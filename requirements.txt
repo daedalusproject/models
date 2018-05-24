@@ -74,7 +74,8 @@ Here is the list of requirements that Daedalus Project must follow:
  /                    /
 '--------------------'
 * -> User belongs to one or more organizations.
-* -> Each user have 0 or more roles.
+* -> Each user belongs 0 or more groups.
+* -> Each group has 0 or more roles.
 * -> Organzations are able to manage groups of uers with the same role. For example, an intern roles.
 * -> An organizacion is able to manage groups of roles, for example groups of project's caratakers. 
      When organization A wants Organization B to manage its project, organization B is able to choose
@@ -148,9 +149,18 @@ Here is the list of requirements that Daedalus Project must follow:
 * -> Decides Fireman visibility and access.
 * -> It's able to access to any Saas control panel.
 
+  .--------------------------------.
+ /  Daedalus Manager               /
+'--------------------------------'
+
+* -> Superadmin user.
+* -> Has all Fireman Commando properties.
+* -> Only admin users are allowed belong to a group with this role attached.
+
+
     .-----------------------------------------.
    /                                         /
-  /     Projects Oracle         /
+  /     Projects Oracle                     /
  /                                         /
 '-----------------------------------------'
 
