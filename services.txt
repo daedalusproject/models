@@ -21,7 +21,7 @@ Daedalus Project is not a giant monolitic app, it splits into many services.
    /     Hermes           /
   '----------------------'
   
-   This service provides comunication between services.
+   This service provides communication between services.
    It is essencialy a distributed message broker.
    Technology: ¿? (ømq, RabbitMq, Celery, Kafka, Apache ActiveMQ, AWS SQS, Gcloud Pub/Sub)
 
