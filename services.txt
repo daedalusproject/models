@@ -23,7 +23,16 @@ Daedalus Project is not a giant monolitic app, it splits into many services.
   
    This service provides communication between services.
    It is essencialy a distributed message broker.
-   Technology: ¿? (ømq, RabbitMq, Celery, Kafka, Apache ActiveMQ, AWS SQS, Gcloud Pub/Sub)
+   Technology: (RabbitMq AWS SQS, ¿Gcloud Pub/Sub?)
+
+    .----------------------.
+   /     Iris             /
+  '----------------------'
+  
+   The personification of the rainbow and messenger of the gods. 
+   This service sends notifications outside Daedalus Project Realms such as:
+     * -> e-mails
+     * -> other services (not defined yet)
 
     .----------------------.
    /     Icarus           /
