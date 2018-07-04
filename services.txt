@@ -99,6 +99,6 @@ Daedalus Project is not a giant monolitic app, it splits into many services.
   '----------------------'
 
    (Ensures good luck, health, and wisdom.)
-   Project's monitoring services, provides monitorign info provides by Mazes Kairos service.
+   Project's monitoring services, provides monitoring info provides by Mazes Kairos service.
 
    Technology: Prometheus + Grafana so far.
